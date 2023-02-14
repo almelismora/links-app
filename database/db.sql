@@ -2,6 +2,7 @@ DROP DATABASE IF EXISTS db_links;
 CREATE DATABASE db_links CHARSET utf8mb4;
 USE db_links;
 
+
 CREATE TABLE users (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(20) NOT NULL,
@@ -9,6 +10,7 @@ CREATE TABLE users (
     email VARCHAR(40) NOT NULL,
     fullname VARCHAR(40) NOT NULL
 );
+
 
 CREATE TABLE links (
     id INT AUTO_INCREMENT PRIMARY KEY,
