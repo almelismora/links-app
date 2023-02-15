@@ -52,8 +52,8 @@ app.use((req, res, next) => {
 })
 //Routes
 app.use('/', indexRouter);
+app.use('/', authenticationRouter); // podemos hacerlo porque en authentication.js la ruta raiz es /signup
 app.use('/links', linksRouter);
-app.use('/authentication', authenticationRouter);
 
 
 //Public
