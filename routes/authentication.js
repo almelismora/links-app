@@ -1,15 +1,25 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport')
 
 
 router.get('/signup', (req, res, next) => {
   res.render('auth/signup');
 });
 
-router.post('/signup', (req, res, next) => {
 
-  console.log(req.body)
-  res.send('POSTEADO')
+router.post('/signup', passport.authenticate('local.signup', {
+
+  successRedirect: '/profile',
+  failureRedirect: '/signup',
+  failureFlash: true
+  
+})
+)
+
+
+router.get('/profile', (req, res, next) => {
+  res.send('This is your profile')
 })
 
 
